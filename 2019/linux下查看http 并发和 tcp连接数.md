@@ -8,8 +8,6 @@ ps -ef | grep httpd | wc -l
 ```bash
 netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
 ```
-（这条语句是从新浪互动社区事业部技术总监王老大那儿获得的，非常不错）
-
 返回结果示例：
 
 LAST_ACK 5
@@ -68,7 +66,7 @@ ITMED_WAIT：等待所有分组死掉
 CLOSING：两边同时尝试关闭
 TIME_WAIT：另一边已初始化一个释放
 LAST_ACK：等待所有分组死掉
-``` 
+```
 #### 2、查看Nginx运行进程数
 
 ```bash
@@ -78,12 +76,12 @@ ps -ef | grep nginx | wc -l
 
 ```bash
 ps -ef | grep httpd | wc -l
-``` 
+```
 #### 3、查看Web服务器进程连接数：
 
 ```bash
 netstat -antp | grep 80 | grep ESTABLISHED -c
-``` 
+```
 #### 4、查看MySQL进程连接数：
 ```bash
 ps -axef | grep mysqld -c
